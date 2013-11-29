@@ -2,25 +2,24 @@
 
 int main(){
 	short l,h,p=1,r=9;
-	char field[3][3] = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}} ;
+	char field[3][3] = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
 	short nfield[3][3];
 	while (r>0){
-		printf("%c|%c|%c\n",field[0][0],field[1][0],field[2][0]);
-		printf("-----\n");
-		printf("%c|%c|%c\n",field[0][1],field[1][1],field[2][1]);
-		printf("-----\n");
-		printf("%c|%c|%c\n\n",field[0][2],field[1][2],field[2][2]);
+		printf("       0 | 1 | 2 \n\n");
+		printf(" 0     %c | %c | %c \n",field[0][0],field[1][0],field[2][0]);
+		printf("      -----------\n");
+		printf(" 1     %c | %c | %c \n",field[0][1],field[1][1],field[2][1]);
+		printf("      -----------\n");
+		printf(" 2     %c | %c | %c \n\n",field[0][2],field[1][2],field[2][2]);
 		printf("Input\n");
 		scanf("%hd %hd", &l, &h);
+		printf("\n\n");
 		
-		if (h!=0 && h!=1 && h!=2){
+		if ((h!=0 && h!=1 && h!=2) || (l!=0 && l!=1 && l!=2)){
 			printf("Wrong input\n");
 			continue;}
-		else if (l!=0 && l!=1 && l!=2){
-			printf("Wrong Input\n");
-			continue;}
 		else if (field[h][l] != ' '){
-			printf("Wrong Input\n");
+			printf("This Field is not empty\n");
 			continue;}
 		else if (p == 0){
 			field[h][l] = 'X';
